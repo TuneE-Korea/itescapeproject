@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "../app/style.css";
 import Image from "next/image";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { data } from "./dummy/data";
 
 const SliderBanner = () => {
   return (
@@ -24,48 +25,13 @@ const SliderBanner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper h-[80vh]"
         slidesPerView={1}
-        // spaceBetween={50}
       >
-        <SwiperSlide className="h-full">
-          <Image
-            className="object-cover"
-            src={"/images/fourth.jpg"}
-            alt={""}
-            fill
-          />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <Image
-            className="object-cover"
-            src={"/images/second.jpg"}
-            alt={""}
-            fill
-          />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <Image
-            className="object-cover"
-            src={"/images/third.jpg"}
-            fill
-            alt={""}
-          />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <Image
-            className="object-cover"
-            src={"/images/first.jpg"}
-            fill
-            alt={""}
-          />
-        </SwiperSlide>
-        <SwiperSlide className="h-full">
-          <Image
-            className="object-cover"
-            src={"/images/fifth.jpg"}
-            fill
-            alt={""}
-          />
-        </SwiperSlide>
+        {/* 데이터 배열을 이용해서 슬라이드 생성 */}
+        {data.map((v, i) => (
+          <SwiperSlide key={i} className="h-full">
+            <Image className="object-cover" src={v.image} alt={v.title} fill />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );

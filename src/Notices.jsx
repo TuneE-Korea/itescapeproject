@@ -1,6 +1,6 @@
 "use client";
 import { CameraOff, MessageSquareOff, Skull, TimerOff } from "lucide-react";
-import { motion, AnimatePresence, easeInOut, easeOut } from "framer-motion";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 const Notices = () => {
   const NoticeVar = {
     hidden: {},
