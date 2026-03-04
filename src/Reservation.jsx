@@ -3,6 +3,7 @@ import Image from "next/image";
 import ReservationButton from "./ReservationButton";
 
 const Reservation = (props) => {
+  // 예약 가능한 시간대(1시간 단위)를 배열로 만들어주는 함수
   const makeTables = (startTime, endTime) =>
     Array(endTime - startTime + 1)
       .fill(0)

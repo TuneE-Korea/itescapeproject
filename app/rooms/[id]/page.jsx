@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 
 const Page = () => {
   const params = useParams();
+  // params는 { id: '1' } 이런식으로 객체 형태로 넘어온다.
   const thisData = data.find((v) => v.id == +params.id);
   return (
     <section className="bg-[#00083046] h-screen p-40">

@@ -1,6 +1,6 @@
 "use client";
 import { CameraOff, MessageSquareOff, Skull, TimerOff } from "lucide-react";
-import { motion, AnimatePresence, easeOut } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 const Notices = () => {
   const NoticeVar = {
     hidden: {},
@@ -22,25 +22,23 @@ const Notices = () => {
   return (
     <section>
       <div className="container mx-auto my-40 flex flex-col items-center justify-center">
-        <AnimatePresence>
-          <motion.div
-            className="bg-amber-300 p-5 mb-20 gap-3 flex flex-col items-center"
-            variants={NoticeVar}
-            whileInView={{
-              opacity: 1,
-              scale: [1, 1.1, 1.2, 1.1, 1],
-              rotate: [0, -5, 5, -5, 0],
-              borderRadius: ["0%", "25%", "50%", "25%", "20%"],
-            }}
-            // 처음 뷰포트에 들어왔을 때만 실행!
-            viewport={{ once: true }}
-            // viewport에 들어오는지 체크하는 법
-            // onViewportEnter={(entry) => console.log(entry.isIntersecting)}
-          >
-            <h3 className="text-5xl text-center font-bold ">NOTICE</h3>
-            <span className="text-xl text-center">🙏주의사항🙏</span>
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          className="bg-amber-300 p-5 mb-20 gap-3 flex flex-col items-center"
+          variants={NoticeVar}
+          whileInView={{
+            opacity: 1,
+            scale: [1, 1.1, 1.2, 1.1, 1],
+            rotate: [0, -5, 5, -5, 0],
+            borderRadius: ["0%", "25%", "50%", "25%", "20%"],
+          }}
+          // 처음 뷰포트에 들어왔을 때만 실행!
+          viewport={{ once: true }}
+          // viewport에 들어오는지 체크하는 법
+          // onViewportEnter={(entry) => console.log(entry.isIntersecting)}
+        >
+          <h3 className="text-5xl text-center font-bold ">NOTICE</h3>
+          <span className="text-xl text-center">🙏주의사항🙏</span>
+        </motion.div>
 
         <motion.div
           className="flex justify-between gap-10"

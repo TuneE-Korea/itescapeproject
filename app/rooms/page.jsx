@@ -16,9 +16,10 @@ const Page = () => {
             주어진 미션을 해결하여 탈출해야하는 신개념 문화/여가 시설입니다.
           </p>
         </div>
+        {/* 3열 그리드로 표현하는 방탈출 목록 */}
         <div className="grid grid-cols-3 gap-10 justify-center items-center">
           {data.map((v, i) => (
-            // 아래와 같이 속성을 지정해줄 수도 있다!
+            // 아래와 스프레드 연산자로(...)로 속성을 지정해줄 수도 있다!
             <Room key={i} {...v} />
           ))}
         </div>
