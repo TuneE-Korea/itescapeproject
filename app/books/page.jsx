@@ -12,7 +12,7 @@ const Page = () => {
     <section className="bg-[#00083046]">
       <div className="container mx-auto py-20">
         <h2 className="text-3xl text-white text-center mb-10">Reservation</h2>
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full">
           <Calendar onChange={setValue} value={value} />
         </div>
         {/* 예약 표를 map으로 뿌려주기 */}

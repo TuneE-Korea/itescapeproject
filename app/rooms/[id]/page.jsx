@@ -8,6 +8,7 @@ const Page = () => {
   const params = useParams();
   // params는 { id: '1' } 이런식으로 객체 형태로 넘어온다.
   const thisData = data.find((v) => v.id == +params.id);
+  // console.log(thisData); // thisData또한 Object 객체다
   return (
     <section className="bg-[#00083046] h-screen p-40">
       <div className="container w-full h-full mx-auto flex gap-20">

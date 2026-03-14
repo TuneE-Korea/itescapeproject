@@ -1,6 +1,8 @@
 import "./globals.css";
 import Header from "@/Header";
 import localFont from "next/font/local";
+// AppRouterCacheProvider removed: not available in this Next.js version
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 // 사용할 로컬 폰트 이름 설정
 const vitroInspire = localFont({
@@ -18,10 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`bg-[#3C465C] ${vitroInspire.variable}`}>
       <body>
-        <div className="bg-[#D9D9D9] px-10 border-b">
-          <Header />
-        </div>
-        <main className="bg-[#3C465C]">{children}</main>
+        <AppRouterCacheProvider>
+          <div className="bg-[#D9D9D9] px-10 border-b">
+            <Header />
+          </div>
+          <main className="bg-[#3C465C]">{children}</main>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

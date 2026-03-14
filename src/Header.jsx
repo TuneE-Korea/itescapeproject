@@ -16,6 +16,7 @@ const Header = () => {
         >
           <Link href={"/"}>IT_ESCAPE</Link>
         </motion.div>
+        {/* 768px 이하에서는 메뉴 아이콘이 보이고, 그 이상에서는 숨겨진다. */}
         <Menu className="md:hidden" />
         <ul className="hidden md:flex justify-between items-center gap-10">
           <li>
@@ -38,6 +39,17 @@ const Header = () => {
               transition={{ duration: 0.1 }}
             >
               <Link href={"/books"}>BOOKS</Link>
+            </motion.div>
+          </li>
+          <li>
+            <motion.div
+              whileTap={{ scale: 0.8 }}
+              whileHover={{
+                scale: 1.3,
+              }}
+              transition={{ duration: 0.1 }}
+            >
+              <Link href={"/faq"}>FAQ</Link>
             </motion.div>
           </li>
         </ul>
