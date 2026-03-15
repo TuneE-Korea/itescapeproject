@@ -1,5 +1,5 @@
 "use client";
-import { motion, easeOut } from "framer-motion";
+import { motion, easeOut, animate, stagger } from "framer-motion";
 const QuestionsMenu = (props) => {
   const menuList = ["일반사항", "제한사항", "결제/환불"];
   return (
