@@ -9,7 +9,7 @@ import { useState } from "react";
 import { motion, easeOut, AnimatePresence } from "framer-motion";
 const QuestionBox = (props) => {
   // 여기서 state를 관리하는 이유는 각 질문마다 답변이 열리고 닫히는 상태를 개별적으로 관리하기 위함.
-  // 만약 부모 컴포넌트에서 isOpen 상태를 관리한다면, 모든 질문이 동시에 열리거나 닫히게 됨.
+  // 부모 컴포넌트에서 isOpen 상태를 관리한다면, 모든 질문이 동시에 열리거나 닫히게 됨.
   const [isOpen, setIsOpen] = useState(false);
 
   const itemVariants = {
