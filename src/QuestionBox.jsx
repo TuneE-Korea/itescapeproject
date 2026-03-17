@@ -12,16 +12,15 @@ const QuestionBox = (props) => {
   // 부모 컴포넌트에서 isOpen 상태를 관리한다면, 모든 질문이 동시에 열리거나 닫히게 됨.
   const [isOpen, setIsOpen] = useState(false);
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: easeOut } },
-  };
   return (
     <motion.div
       className="flex flex-col items-start text-white"
-      variants={itemVariants}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, x: -30 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.3, ease: easeOut },
+      }}
     >
       {/* 질문 내용 */}
       <motion.button
