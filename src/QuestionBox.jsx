@@ -14,7 +14,7 @@ const QuestionBox = (props) => {
 
   return (
     <motion.div
-      className="flex flex-col items-start text-white"
+      className="flex flex-col items-start mx-8 md:mx-10 text-white"
       initial={{ opacity: 0, x: -30 }}
       animate={{
         opacity: 1,
@@ -24,7 +24,7 @@ const QuestionBox = (props) => {
     >
       {/* 질문 내용 */}
       <motion.button
-        className="flex gap-2 items-center"
+        className="flex gap-2 items-center break-keep"
         onClick={() => {
           setIsOpen((prev) => !prev);
           console.log(
@@ -58,7 +58,7 @@ const QuestionBox = (props) => {
             transition={{ duration: 0.25, ease: easeOut }}
           >
             <MessageCircleReply />
-            <p className="whitespace-pre-line">{props.answer}</p>
+            <p className="whitespace-pre-line break-keep">{props.answer}</p>
           </motion.div>
         )}
       </AnimatePresence>

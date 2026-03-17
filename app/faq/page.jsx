@@ -20,9 +20,11 @@ const Page = () => {
     },
   };
   return (
-    <section className="max-w-3xl mx-auto py-20 h-screen">
+    <section className="max-w-3xl mx-auto py-10 md:py-20 h-screen">
       <div className="flex flex-col">
-        <h1 className="text-3xl text-white text-center mb-10">FAQ</h1>
+        <h1 className="text-xl md:text-3xl text-white text-center mb-10">
+          FAQ
+        </h1>
         {/* props로 activeCategory와 setActiveCategory 전달 */}
         <QuestionsMenu
           activeCategory={activeCategory}
