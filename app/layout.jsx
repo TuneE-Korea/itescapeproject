@@ -3,6 +3,11 @@ import Header from "@/Header";
 import localFont from "next/font/local";
 // AppRouterCacheProvider removed: not available in this Next.js version
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 
 // 사용할 로컬 폰트 이름 설정
 const vitroInspire = localFont({
@@ -18,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`bg-[#3C465C] ${vitroInspire.variable}`}>
+    <html lang="en" className={cn("bg-[#3C465C]", vitroInspire.variable, "font-sans", geist.variable)}>
       <body>
         <AppRouterCacheProvider>
           <div className="bg-[#D9D9D9] px-10 border-b">
